@@ -33,7 +33,7 @@ ___error function call if status != 200___
      // response = JSON or xhrResponse 
   }
 ```
-### OR use (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)[Promise]
+### OR use (Promise)[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise]
 ___Promises are a clean way to implement async programming in JavaScript (ES6 new feature).
  Prior to promises, Callbacks were used to implement async programming.___
 
