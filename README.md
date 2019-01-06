@@ -33,3 +33,23 @@ ___error function call if status != 200___
      // response = JSON or xhrResponse 
   }
 ```
+### OR use (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)[Promise]
+___Promises are a clean way to implement async programming in JavaScript (ES6 new feature).
+ Prior to promises, Callbacks were used to implement async programming.___
+
+```
+<script type="text/javascript" src="apiAjax.js"></script>
+<script type="text/javascript">
+   apiAjax.get(url).then((resp)=>{
+        // done 
+   }).catch((resp)=>{ 
+       // Error  
+   });
+   apiAjax.post (url).then((resp)=>{
+        // done 
+   }).catch((resp)=>{ 
+       // Error  
+   });
+</script>
+```
+
