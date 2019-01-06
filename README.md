@@ -1,29 +1,22 @@
 # apiAjaxJS
 
+### Simple library APIAjax request Json & respons json 
 
 ```
 <script type="text/javascript" src="apiAjax.js"></script>
 <script type="text/javascript">
-    // this stat
+    // How To User  
     apiAjax({
-      method: String ,
-			url   : String '
-      header: Object ,
-      data  : Object ,
-			done:(response)=>{ 
-				 //  response => object { data:object(JSON), status:integer } 
-			},
-			error:(response)=>{ 
-          //  response => JSON ? responseText : object xhrRespons
-      }, 
-      start:()=>{
-        // loadstart
-      },
-      change:(response)=>{
-        // response => JSON ? responseText : object xhrResponse
-        // readystatechange
-      },
-		})
+      method: String , // methods request ( GET | POST | PUT | . . . . .  )
+      url   : String , // path api 
+      header: Object , // header 
+      data  : Object , // data JSON
+      
+      done  : function , 
+      error : function , 
+      start : function ,
+      change: function , 
+    })
     
 </script>
 ```
