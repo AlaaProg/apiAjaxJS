@@ -20,3 +20,16 @@
     
 </script>
 ```
+
+___done function call if status ==  200___
+```
+ done : (response)=>{
+    // response = Object { data , status } 
+ }
+```
+___error function call if status != 200___
+```
+  error:(response)=>{
+     // response = JSON or xhrResponse 
+  }
+```
