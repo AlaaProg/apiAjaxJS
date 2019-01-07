@@ -9,17 +9,18 @@
 	typeof define === 'function' && define.amd ? define(factory) :
 	(global.apiAjax = factory());
 }(this, ( function () { 
-	var xhr = null; 
-
-	if( window.XMLHttpRequest ){ 
-		var xhr = new XMLHttpRequest(); 
-	}
-
-	else if( window.ActiveXObject ){ 
-		var xhr = new ActiveXObject("MicrosoftXMLHTTP"); 
-	}
 
 	function apiAjax(prm){
+		var xhr = null; 
+
+		if( window.XMLHttpRequest ){ 
+			var xhr = new XMLHttpRequest(); 
+		}
+
+		else if( window.ActiveXObject ){ 
+			var xhr = new ActiveXObject("MicrosoftXMLHTTP"); 
+		}
+
 		
 		if(prm.method){
 			
