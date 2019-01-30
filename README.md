@@ -2,7 +2,7 @@
 
 ### Simple library API Ajax to request Json And  response Json   
 
-### OR use [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+### by using the [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 ___Promises are a clean way to implement async programming in JavaScript (ES6 new feature).
  Prior to promises, Callbacks were used to implement async programming.___
 
