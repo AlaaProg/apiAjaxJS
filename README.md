@@ -24,7 +24,8 @@ Promises are a clean way to implement async programming in JavaScript (ES6 new f
 ```
 METHODS PUT , VIEW , DELETE , GET , POST
 <br>
-<hr />
+________________________________________________________________________________
+<br>
 #### UPLOAD  files
 ```
 apiAjax.upload(url, FormData, process, header)
