@@ -1,12 +1,9 @@
 /*!
  * 
- * apiAjaxjs v100
- * (c) 2019 by alaa_akiel
- * For All 
+ * apiAjaxjs
  */
+ 
 (function (global, factory) {
-	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
-	typeof define === 'function' && define.amd ? define(factory) :
 	(global.apiAjax = factory());
 }(this, ( function () { 
 
@@ -21,15 +18,15 @@
 			var xhr = new ActiveXObject("MicrosoftXMLHTTP"); 
 		}
 
-		
 		if(prm.method){
 			
 			prm.method = prm.method.toUpperCase();
 
 		}else{ prm.method = "GET"; }
-		
-		xhr.open( prm.method, prm.url, true);
 
+		xhr.overrideMimeType('text/plain; charset=x-user-defined');
+
+	
 		// ON Start request 
 		xhr.addEventListener('loadstart', function(e){
 			if( prm.start ){ prm.start(e) }
@@ -44,10 +41,8 @@
 			if( this.readyState == 4){ 
 				if( this.status == 200){
 					if( prm.done ){
-						prm.done({
-							data:JSON.parse(this.responseText),
-							status:this.status
-						})
+						try{ prm.done({data:JSON.parse(this.responseText),status:this.status})}
+						catch(e){prm.done({data:this.responseText,status:this.status})}
 					}
 				}else{
 					if(prm.error){
@@ -58,22 +53,36 @@
 			}
 		})
 
+		xhr.upload.addEventListener("process", function(e){
+			if(prm.process){
+				prm.process(e)
+			}
+		});
+
+		xhr.open( prm.method, prm.url, true);
+
+		xhr.setRequestHeader("Access-Control-Allow-Origin","*")
 		if(prm.header){
 			Object.keys(prm.header).forEach(function(key){
+				console.log(key,prm.header[key])
 				xhr.setRequestHeader(key,prm.header[key]);
 			});
 		}
 
-		xhr.setRequestHeader("Content-Type","application/json")
 		
-		xhr.send(JSON.stringify(prm.data));
+		if(prm.uploadfiles){ xhr.send(prm.data); }
+		else{
+			xhr.setRequestHeader("Content-Type","application/json")
+			xhr.send(JSON.stringify(prm.data));
+		}
 	}
 
 
-	apiAjax.get = (url,header)=>{
+	apiAjax.get = (url,process,header)=>{
 		return new Promise(function(_200,_401){
 			apiAjax({method:'GET',
 				url:url,
+				process:process,
 				header:header,
 				done:_200,
 				error:_401
@@ -82,10 +91,12 @@
 	}
 
 
-	apiAjax.view = (url,header)=>{
+
+	apiAjax.view = (url,process,header)=>{
 		return new Promise(function(_200,_401){
 			apiAjax({method:'VIEW',
 				url:url,
+				process:process,
 				header:header,
 				done:_200,
 				error:_401
@@ -94,11 +105,12 @@
 	}
 
 
-	apiAjax.post = (url,data,header)=>{
+	apiAjax.post = (url,data,process,header)=>{
 		return new Promise(function(_200,_401){
 			apiAjax({method:'POST',
 				url:url,
 				header:header,
+				process:process,
 				data:data,
 				done:_200,
 				error:_401
@@ -106,10 +118,24 @@
 		})
 	}
 
-	apiAjax.delete = (url,data={},header)=>{
+	apiAjax.delete = (url,data={},process,header)=>{
 		return new Promise(function(_200,_401){
 			apiAjax({method:'DELETE',
 				url:url,
+				header:header,
+				process:process,
+				data:data,
+				done:_200,
+				error:_401
+			})
+		})
+	}
+
+	apiAjax.put = (url,data,process,header)=>{
+		return new Promise(function(_200,_401){
+			apiAjax({method:'PUT',
+				url:url,
+				process:process,
 				header:header,
 				data:data,
 				done:_200,
@@ -118,9 +144,12 @@
 		})
 	}
 
-	apiAjax.put = (url,data,header)=>{
+
+	apiAjax.upload = (url,data,process,header)=>{
 		return new Promise(function(_200,_401){
-			apiAjax({method:'PUT',
+			apiAjax({method:'POST',
+				uploadfiles:true,
+				process:process,
 				url:url,
 				header:header,
 				data:data,
