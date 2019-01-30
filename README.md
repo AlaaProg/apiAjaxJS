@@ -48,14 +48,15 @@ and can upload files with it
     })
 ```
 
-# Instance methods
+# Functions 
 
-apiAjax.get(url,process,header)
-apiAjax.view(url,process,header)
-apiAjax.post(url,data,process,header)
-apiAjax.delete(url,data={},process,header)
-apiAjax.put(url,data,process,header)
-apiAjax.upload(url,data,process,header)
+##### apiAjax.get(url,process,header)
+##### apiAjax.view(url,process,header)
+##### apiAjax.post(url,data,process,header)
+##### apiAjax.delete(url,data={},process,header)
+##### apiAjax.put(url,data,process,header)
+##### apiAjax.upload(url,data,process,header)
+
 
 # Promises
  apiAjax depends on a native ES6 Promise implementation to be supported. If your environment doesn't support ES6 Promises, you can
