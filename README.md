@@ -4,7 +4,7 @@
 
 # Install 
    ```
-     <script type="text/javascript" src="apiAjax.js"></script>
+     <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/AlaaProg/apiAjaxJS/apiAjax.js"></script>
    ```
    
 # Usage
