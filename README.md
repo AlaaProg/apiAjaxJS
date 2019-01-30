@@ -2,9 +2,6 @@
 
 ### Simple library API Ajax to request Json And  response Json   
 
-### by using the [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
-Promises are a clean way to implement async programming in JavaScript (ES6 new feature).
- Prior to promises, Callbacks were used to implement async programming.
 # Install 
    ```
      <script type="text/javascript" src="apiAjax.js"></script>
@@ -59,10 +56,11 @@ and can upload files with it
 
 
 # Promises
- apiAjax depends on a native ES6 Promise implementation to be supported. If your environment doesn't support ES6 Promises, you can
- Requests can be made by passing the relevant config to apiAjax 
+ apiAjax depends on a ES6 Promise . If your environment doesn't support ES6 Promises, you can
+ Requests can be made by passing the relevant config to `apiAjax` 
  
- ```
+ ```js 
+  // this without Promise
   apiAjax({
      method  : '' , 
      data    : '' , 
