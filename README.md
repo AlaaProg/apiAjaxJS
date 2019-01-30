@@ -1,6 +1,6 @@
 # apiAjaxJS
 
-### Simple library APIAjax request Json & respons json 
+### Simple library API Ajax to request Json And  response Json   
 
 ### OR use [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 ___Promises are a clean way to implement async programming in JavaScript (ES6 new feature).
@@ -22,18 +22,17 @@ ___Promises are a clean way to implement async programming in JavaScript (ES6 ne
    
 </script>
 ```
+___METHODS PUT , VIEW , DELETE , GET , POST____
 
-__METHODS PUT , VIEW , DELETE , GET , POST __
-
-__AND UPLOAD__ 
-__This To Upload file__
+__AND UPLOAD
+This To Upload files__
 
 ```
 apiAjax.upload(url, FormData, process, header)
     .then(resp=>{
-        // 
+        // done 
     }).catch(resp=>{ 
-        // 
+        // Error
     })
 ```
-[this Exmpale with VueJs](https://github.com/AlaaProg/Flask-Vue-xhr/blob/master/admins/static/js/components/upload.js#L75)
+show this [exmpale with VueJs & Flask](https://github.com/AlaaProg/Flask-Vue-xhr/blob/master/admins/static/js/components/upload.js#L75)
