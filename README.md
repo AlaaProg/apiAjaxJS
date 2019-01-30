@@ -6,6 +6,7 @@
 Promises are a clean way to implement async programming in JavaScript (ES6 new feature).
  Prior to promises, Callbacks were used to implement async programming.
 
+# Usage
 ```
 <script type="text/javascript" src="apiAjax.js"></script>
 <script type="text/javascript">
@@ -22,10 +23,8 @@ Promises are a clean way to implement async programming in JavaScript (ES6 new f
    
 </script>
 ```
-METHODS PUT , VIEW , DELETE , GET , POST
-<br>
-________________________________________________________________________________
-<br>
+___METHODS PUT , VIEW , DELETE , GET , POST___
+
 #### UPLOAD  files
 ```
 apiAjax.upload(url, FormData, process, header)
