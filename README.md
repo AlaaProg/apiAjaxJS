@@ -3,8 +3,8 @@
 ### Simple library API Ajax to request Json And  response Json   
 
 ### by using the [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
-___Promises are a clean way to implement async programming in JavaScript (ES6 new feature).
- Prior to promises, Callbacks were used to implement async programming.___
+Promises are a clean way to implement async programming in JavaScript (ES6 new feature).
+ Prior to promises, Callbacks were used to implement async programming.
 
 ```
 <script type="text/javascript" src="apiAjax.js"></script>
@@ -22,11 +22,9 @@ ___Promises are a clean way to implement async programming in JavaScript (ES6 ne
    
 </script>
 ```
-___METHODS PUT , VIEW , DELETE , GET , POST____
-
-__AND UPLOAD
-This To Upload files__
-
+METHODS PUT , VIEW , DELETE , GET , POST
+<br>
+AND UPLOAD This To Upload files
 ```
 apiAjax.upload(url, FormData, process, header)
     .then(resp=>{
