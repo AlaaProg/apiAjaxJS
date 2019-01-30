@@ -2,37 +2,6 @@
 
 ### Simple library APIAjax request Json & respons json 
 
-```
-<script type="text/javascript" src="apiAjax.js"></script>
-<script type="text/javascript">
-    // How To User  
-    apiAjax({
-      method: String , // methods request ( GET | POST | PUT | . . . . .  )
-      url   : String , // path api 
-      header: Object , // header 
-      data  : Object , // data JSON
-      
-      done  : function , 
-      error : function , 
-      start : function ,
-      change: function , 
-    })
-    
-</script>
-```
-
-___done function call if status ==  200___
-```
- done : (response)=>{
-    // response = Object { data , status } 
- }
-```
-___error function call if status != 200___
-```
-  error:(response)=>{
-     // response = JSON or xhrResponse 
-  }
-```
 ### OR use [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 ___Promises are a clean way to implement async programming in JavaScript (ES6 new feature).
  Prior to promises, Callbacks were used to implement async programming.___
@@ -40,17 +9,31 @@ ___Promises are a clean way to implement async programming in JavaScript (ES6 ne
 ```
 <script type="text/javascript" src="apiAjax.js"></script>
 <script type="text/javascript">
-   apiAjax.get(url).then((resp)=>{
+   apiAjax.get(url,process,header).then((resp)=>{
         // done 
    }).catch((resp)=>{ 
        // Error  
    });
-   apiAjax.post (url).then((resp)=>{
+   apiAjax.post (url,data,process,header).then((resp)=>{
         // done 
    }).catch((resp)=>{ 
        // Error  
    });
-   // can use put and view and delete 
+   
 </script>
 ```
 
+__METHODS PUT , VIEW , DELETE , GET , POST __
+
+__AND UPLOAD__ 
+__This To Upload file__
+
+```
+apiAjax.upload(url, FormData, process, header)
+    .then(resp=>{
+        // 
+    }).catch(resp=>{ 
+        // 
+    })
+```
+[this Exmpale with VueJs](https://github.com/AlaaProg/Flask-Vue-xhr/blob/master/admins/static/js/components/upload.js#L75)
